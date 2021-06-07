@@ -36,17 +36,10 @@ ChatLogic::~ChatLogic()
     delete _chatBot;
 
     // delete all nodes
-    for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it)
-    {
-        delete *it;
-    }
+    _nodes.erase(_nodes.begin() , _nodes.end());
 
     // delete all edges
-    for (auto it = std::begin(_edges); it != std::end(_edges); ++it)
-    {
-        delete *it;
-    }
-
+    _edges.erase(_edges.begin(),_edges.end());
     ////
     //// EOF STUDENT CODE
 }
