@@ -44,7 +44,14 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+ChatBot::ChatBot(ChatBot& other){
+    _image = other._image;
 
+}  //copy ctor
+ChatBot::ChatBot(ChatBot&& other){} //move ctor
+
+ChatBot& ChatBot::operator=(ChatBot& other){}
+ChatBot& ChatBot::operator=(ChatBot&& other){}
 ////
 //// EOF STUDENT CODE
 
