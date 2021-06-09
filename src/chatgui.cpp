@@ -128,7 +128,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
 }
 
 ChatBotPanelDialog::~ChatBotPanelDialog(){
-    delete _dialogSizer;
+
 }
 
 void ChatBotPanelDialog::AddDialogItem(wxString text, bool isFromUser)
