@@ -46,52 +46,44 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
-ChatBot::ChatBot(ChatBot& other){
+ChatBot::ChatBot(const ChatBot &other){
     std::cout<< "ChatBot copy ctor" << std::endl;
     _image = other._image;
-    _currentNode = other._currentNode;
     _rootNode = other._rootNode;
     _chatLogic = other._chatLogic;
 
 }  //copy ctor
 
-ChatBot::ChatBot(ChatBot&& other){
+ChatBot::ChatBot(ChatBot &&other){
     std::cout<< "ChatBot move ctor" << std::endl;
     _image = other._image;
-    _currentNode = other._currentNode;
     _rootNode = other._rootNode;
     _chatLogic = other._chatLogic;
-    other._image = nullptr;
-    other._currentNode = nullptr;
+    _chatLogic->SetChatbotHandle(this);
+    other._image = NULL;
     other._rootNode = nullptr;
     other._chatLogic = nullptr;
 } //move ctor
 
-ChatBot& ChatBot::operator=(ChatBot& other){
+ChatBot& ChatBot::operator=(const ChatBot &other){
     if(this == &other)
         return *this;
     std::cout<< "ChatBot copy operator" << std::endl;
-    delete _image;
-    delete _currentNode;
-    delete _rootNode;
-    delete _chatLogic;
     _image = other._image;
-    _currentNode = other._currentNode;
     _rootNode = other._rootNode;
     _chatLogic = other._chatLogic;
     return *this;
 }
 
-ChatBot& ChatBot::operator=(ChatBot&& other){
+ChatBot& ChatBot::operator=(ChatBot &&other){
     if(this == &other)
         return *this;
     std::cout<< "ChatBot move operator" << std::endl;
     _image = other._image;
-    _currentNode = other._currentNode;
     _rootNode = other._rootNode;
     _chatLogic = other._chatLogic;
-    other._image = nullptr;
-    other._currentNode = nullptr;
+    _chatLogic->SetChatbotHandle(this);
+    other._image = NULL;
     other._rootNode = nullptr;
     other._chatLogic = nullptr;
     return *this;
