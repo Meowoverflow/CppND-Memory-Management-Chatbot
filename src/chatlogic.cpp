@@ -12,16 +12,7 @@
 #include "chatlogic.h"
 
 
-ChatLogic::ChatLogic()
-{
-    std::cout<< "ChatLogic normal Constructor" <<std::endl;
-    // create instance of chatbot
-    _chatBot = new ChatBot("../images/chatbot.png");
-
-    // add pointer to chatlogic so that chatbot answers can be passed on to the GUI
-    _chatBot->SetChatLogicHandle(this);
-
-}
+ChatLogic::ChatLogic(){}
 
 ChatLogic::~ChatLogic()
 {
