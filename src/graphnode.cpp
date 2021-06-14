@@ -24,7 +24,7 @@ void GraphNode::AddEdgeToChildNode(unique_ptr<GraphEdge>& edge)
 }
 
 
-void GraphNode::MoveChatbotHere(ChatBot &&chatbot)
+void GraphNode::MoveChatbotHere(ChatBot chatbot)
 {
     _chatBot = std::move(chatbot);
     _chatBot.SetCurrentNode(this);
