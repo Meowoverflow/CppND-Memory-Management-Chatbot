@@ -12,13 +12,14 @@
 #include "chatlogic.h"
 
 
-ChatLogic::ChatLogic(){}
+ChatLogic::ChatLogic()
+{
+    std::cout<< "ChatLogic Constructor" <<std::endl;
+}
 
 ChatLogic::~ChatLogic()
 {
     std::cout<< "ChatLogic Destructor" <<std::endl;
-    // delete all nodes
-    _nodes.erase(_nodes.begin() , _nodes.end());
 }
 
 template <typename T>
